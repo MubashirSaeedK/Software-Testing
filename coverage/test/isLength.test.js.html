@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/endsWith.js</title>
+    <title>Code coverage report for test/isLength.test.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> endsWith.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">test</a> isLength.test.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>37/37</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/37</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
@@ -90,17 +90,7 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -122,59 +112,39 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Checks if `string` ends with the given target string.
- *
- * @since 3.0.0
- * @category String
- * @param {string} [string=''] The string to inspect.
- * @param {string} [target] The string to search for.
- * @param {number} [position=string.length] The position to search up to.
- * @returns {boolean} Returns `true` if `string` ends with `target`,
- *  else `false`.
- * @see includes, startsWith
- * @example
- *
- * endsWith('abc', 'c')
- * // =&gt; true
- *
- * endsWith('abc', 'b')
- * // =&gt; false
- *
- * endsWith('abc', 'b', 2)
- * // =&gt; true
- */
-function endsWith(string, target, position) {
-  const { length } = string
-  position = position === undefined ? length : +position
-  if (position &lt; 0 || position != position) {
-    position = 0
-  }
-  else if (position &gt; length) {
-    position = length
-  }
-  const end = position
-  position -= target.length
-  return position &gt;= 0 &amp;&amp; string.slice(position, end) == target
-}
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import chai from "chai"
+import isLength from "../src/isLength.js"
+const expect = chai.expect
 &nbsp;
-export default endsWith
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;
+describe("isLength.js Tests", () =&gt; {
+&nbsp;
+    it('should return true when positive integer is given as an input argument', () =&gt; {
+        expect(isLength(10)).to.be.true
+      })
+&nbsp;
+      it('should return false when negative integer is given as an input argument', () =&gt; {
+        expect(isLength(-10)).to.be.false
+      })
+&nbsp;
+      it('should return false when Infinity is given as an input argument', () =&gt; {
+        expect(isLength(Infinity)).to.be.false
+      })
+&nbsp;
+      it('should return false when string is given as an input argument', () =&gt; {
+        expect(isLength("string")).to.be.false
+      })
+&nbsp;
+      it('should return false when NaN is given as an input argument', () =&gt; {
+        expect(isLength(NaN)).to.be.false
+      })
+    
+})</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
