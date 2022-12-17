@@ -2,7 +2,7 @@ import chai from "chai"
 import eq from "../src/eq.js"
 const expect = chai.expect
 
-describe("divide.js Tests", () => {
+describe("eq.js Tests", () => {
 
     it("should return true when comapring integer with integer", () =>{
         expect(eq(5,5)).to.be.true
