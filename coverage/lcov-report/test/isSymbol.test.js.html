@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/toFinite.js</title>
+    <title>Code coverage report for test/isSymbol.test.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> toFinite.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">test</a> isSymbol.test.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>37/40</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/40</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
@@ -89,21 +89,7 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -129,68 +115,40 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import toNumber from './toNumber.js'
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import chai from "chai"
+import isSymbol from "../src/isSymbol.js"
+const expect = chai.expect
 &nbsp;
-/** Used as references for various `Number` constants. */
-const INFINITY = 1 / 0
-const MAX_INTEGER = 1.7976931348623157e+308
+describe("isSymbol.js Tests", () =&gt; {
+    
+    it("should return false if integer is given as an input", () =&gt;{
+        expect(isSymbol(5)).to.be.false
+    });
 &nbsp;
-/**
- * Converts `value` to a finite number.
- *
- * @since 4.12.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted number.
- * @example
- *
- * toFinite(3.2)
- * // =&gt; 3.2
- *
- * toFinite(Number.MIN_VALUE)
- * // =&gt; 5e-324
- *
- * toFinite(Infinity)
- * // =&gt; 1.7976931348623157e+308
- *
- * toFinite('3.2')
- * // =&gt; 3.2
- */
-function toFinite(value) {
-  if (!value) {
-    return value === 0 <span class="branch-0 cbranch-no" title="branch not covered" >? value </span>: 0
-  }
-  value = toNumber(value)
-  if (value === INFINITY || value === -INFINITY) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    const sign = (value &lt; 0 ? -1 : 1)</span>
-<span class="cstat-no" title="statement not covered" >    return sign * MAX_INTEGER</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  return value === value ? value <span class="branch-0 cbranch-no" title="branch not covered" >: 0</span>
-}
+    it("should return false if Infinity is given as an input", () =&gt;{
+        expect(isSymbol(Infinity)).to.be.false
+    });
 &nbsp;
-export default toFinite
-&nbsp;</pre></td></tr></table></pre>
+    it("Should return false if Null is given as an input", () =&gt;{
+        expect(isSymbol(null)).to.be.false
+    });
+    
+    it("should return false if float is given as an input", () =&gt;{
+        expect(isSymbol(20.2)).to.be.false
+    });
+    
+    it("should return false if string is given as an input", () =&gt;{
+        expect(isSymbol("test-case")).to.be.false
+    });
+&nbsp;
+})</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-17T14:17:31.556Z
+                at 2022-12-17T14:17:31.493Z
             </div>
         <script src="../prettify.js"></script>
         <script>
