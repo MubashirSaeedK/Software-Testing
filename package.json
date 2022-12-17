@@ -5,14 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha 'test/*.js'",
+    "test": "mocha 'test/*.js' --exit",
     "test2": "nyc mocha",
-    "coverage": "nyc --reporter=text --reporter=lcov --reporter=html --reporter=json npm run test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "c8 --reporter html --reporter text mocha 'test/*.js'",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/register": "^7.12.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "c8": "^7.12.0",
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",

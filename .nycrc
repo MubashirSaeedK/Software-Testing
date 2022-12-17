@@ -1,13 +1,12 @@
 {
     "all": true,
-    "require": ["chai"],
+    "require": ["@babel/register"],
     "include": [
-      "test/**.js"
-     
+      "test/**.js",
+      "src/**.js"
     ],
     "exclude": [
-      "src/*.js",  
-      "src/.internal/*.js" 
+       
     ],
     "reporter": [
       "text",
