@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/isBuffer.js</title>
+    <title>Code coverage report for test/isEmpty.test.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> isBuffer.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">test</a> isEmpty.test.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/35</span>
+                <span class='fraction'>60/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/35</span>
+                <span class='fraction'>60/60</span>
             </div>
         
             
@@ -98,7 +98,31 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -133,42 +157,90 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import root from './.internal/root.js'
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import chai from "chai"
+import isEmpty from "../src/isEmpty.js"
+const expect = chai.expect
 &nbsp;
-/** Detect free variable `exports`. */
-const freeExports = typeof exports === 'object' <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; exports !== null <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !exports.nodeType <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; exports</span>
+describe("endsWith.js Tests", () =&gt; {
+    
+    it('should return true if null is given as an input', () =&gt; {
+        expect(isEmpty(null)).to.be.true
+    })
 &nbsp;
-/** Detect free variable `module`. */
-const freeModule = freeExports <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; typeof module === 'object' <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; module !== null <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !module.nodeType <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; module</span>
+    it('should return true if empty string is given as an input', () =&gt; {
+        expect(isEmpty('')).to.be.true
+    })
 &nbsp;
-/** Detect the popular CommonJS extension `module.exports`. */
-const moduleExports = freeModule <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; freeModule.exports === freeExports</span>
+    it('should return false if input sting has been provided', () =&gt; {
+        expect(isEmpty('test-case')).to.be.false
+    })
 &nbsp;
-/** Built-in value references. */
-const Buffer = moduleExports <span class="branch-0 cbranch-no" title="branch not covered" >? root.Buffer </span>: undefined
+    it('should return false if an array is given as an input', () =&gt; {
+        expect(isEmpty([1, 2, 3])).to.be.false
+    })
 &nbsp;
-/* Built-in method references for those with the same name as other `lodash` methods. */
-const nativeIsBuffer = Buffer <span class="branch-0 cbranch-no" title="branch not covered" >? Buffer.isBuffer </span>: undefined
+    it('should return true if an empty array is given as an input', () =&gt; {
+        expect(isEmpty([])).to.be.true
+    })
 &nbsp;
-/**
- * Checks if `value` is a buffer.
- *
- * @since 4.3.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
- * @example
- *
- * isBuffer(new Buffer(2))
- * // =&gt; true
- *
- * isBuffer(new Uint8Array(2))
- * // =&gt; false
- */
-const isBuffer = nativeIsBuffer || (() =&gt; false)
+    it('should return true if an boolean is given as an input', () =&gt; {
+        expect(isEmpty(true)).to.be.true
+    })
 &nbsp;
-export default isBuffer
-&nbsp;</pre></td></tr></table></pre>
+    it('should return true if an empty object is given as an input', () =&gt; {
+        expect(isEmpty({})).to.be.true
+    })
+&nbsp;
+    it('should return false if an object is given as an input', () =&gt; {
+        expect(isEmpty({ 'a': 1 })).to.be.false
+    })
+&nbsp;
+    it('should return true if an empty map is given as an input', () =&gt; {
+        const map = new Map();
+        expect(isEmpty(map)).to.be.true
+    })
+&nbsp;
+    it('should return true if an empty prototype is given as an input', () =&gt; {
+        function Test() {}
+        const test = new Test();
+        expect(isEmpty(test.__proto__)).to.be.true
+    })
+&nbsp;
+    it('should return true if an empty prototype is given as an input', () =&gt; {
+        function Test() {}
+        const test = new Test();
+        expect(isEmpty(test.__proto__)).to.be.true
+    })
+&nbsp;
+    it('should return true if a typed array is given as an input', () =&gt; {
+        expect(isEmpty(new Uint8Array([1]))).to.be.false
+    })
+&nbsp;
+})</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
