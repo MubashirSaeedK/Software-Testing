@@ -32,5 +32,4 @@ describe("endsWith.js Tests", () => {
         expect(endsWith('hello', 'h', -5)).to.be.false
       })
 
-
 })
