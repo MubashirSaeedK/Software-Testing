@@ -1,0 +1,18 @@
+{
+    "all": true,
+    "require": ["chai"],
+    "include": [
+      "test/**.js"
+     
+    ],
+    "exclude": [
+      "src/*.js",  
+      "src/.internal/*.js" 
+    ],
+    "reporter": [
+      "text",
+      "lcov",
+      "html",
+      "json"
+    ]
+  }
